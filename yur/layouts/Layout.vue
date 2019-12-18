@@ -46,13 +46,13 @@ export default {
   beforeCreate () {
     for (const post of this.$posts) {
       if (!Object.prototype.hasOwnProperty.call(post.frontmatter, 'banner')) {
-        post.frontmatter.banner = require('../media/images/default.jpg')
+        post.frontmatter.banner = require('../media/images/default.png')
       }
     }
     for (const tag in this.$tags) {
       for (const post of this.$tags[tag]) {
         if (!Object.prototype.hasOwnProperty.call(post.frontmatter, 'banner')) {
-          post.frontmatter.banner = require('../media/images/default.jpg')
+          post.frontmatter.banner = require('../media/images/default.png')
         }
       }
     }
@@ -64,9 +64,7 @@ export default {
   beforeMount () {
   },
   mounted () {
-    if (this.vl) {
-      this.initValine()
-    }
+    this.initValine()
   },
   beforeUpdate () {
   },
